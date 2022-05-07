@@ -38,6 +38,9 @@ Plug 'aklt/plantuml-syntax'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'puremourning/vimspector'
+Plug 'kevinhui/vim-docker-tools'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " Statusline settings
@@ -176,7 +179,8 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
-  \'coc-tabnine'
+  \ 'coc-tabnine',
+  \ 'coc-db'
   \ ]
 
 " if hidden is not set, TextEdit might fail.
