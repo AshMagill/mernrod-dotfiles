@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# This script is called on startup to remap keys.
+# Increase key speed via a rate change
+xset r rate 300 50
+# Swap the caps and esc key.
+setxkbmap -option caps:swapescape
+# Map the menu button to right super as well.
+xmodmap -e 'keycode 135 = Super_R'
+
