@@ -132,6 +132,15 @@ set expandtab
 "set emmet leader key
 let g:user_emmet_leader_key=','
 
+"nerd commenter toggle
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+
+"nerd commenter alt keys for jsx
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
+
 "colorscheme
 colorscheme gruvbox
 
@@ -145,8 +154,6 @@ highlight VertSplit ctermfg=NONE
 
 " nerdtree toggle
 nmap <C-n> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
 
 let g:NERDTreeIgnore = ['^node_modules$']
 
