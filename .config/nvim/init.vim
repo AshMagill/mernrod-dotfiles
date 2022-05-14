@@ -6,15 +6,10 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc-tabnine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-snippets'
-Plug 'mlaursen/vim-react-snippets'
-Plug 'neoclide/coc-emmet'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
-Plug 'neoclide/coc-prettier'
-Plug 'garbas/vim-snipmate'
-Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'Yggdroot/indentLine'
@@ -105,9 +100,6 @@ let g:ctrlp_working_path_mode = ''
 
 " show quotes in json when indentline is on
 autocmd Filetype json let g:indentLine_enabled = 0
-
-" set snipmate to an older version (to prevent errors)
-let g:snipMate = { 'snippet_version' : 1}
 
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -309,3 +301,14 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
