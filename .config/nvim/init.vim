@@ -23,7 +23,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['javascript', 'jsx', 'html', 'css'] }
 Plug 'ap/vim-css-color', {'for': ['css', 'scss','sass']} 
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
@@ -37,6 +37,17 @@ Plug 'kevinhui/vim-docker-tools'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
+
+" Emmet working with JSX (without need for jsx extension)
+let g:user_emmet_settings={
+\ 'javascript' : {
+\   'extends' : 'jsx',
+\    'default_attributes' : {
+\      'label': [{'htmlFor': ' '}],
+\      'class': { 'className': ' '},
+\    },
+\  },
+\}
 
 " Statusline settings
 set statusline +=%1*%=%5l%*             "current line
