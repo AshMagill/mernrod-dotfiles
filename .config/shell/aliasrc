@@ -48,6 +48,10 @@ alias \
 alias \
   db="nvim +DBUI" 
 
+# remove anoying terminals with startup 
+alias \
+  code="code && exit"
+
 alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
