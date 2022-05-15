@@ -38,6 +38,17 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
+" Emmet working with JSX (without need for jsx extension)
+let g:user_emmet_settings={
+\ 'javascript' : {
+\   'extends' : 'jsx',
+\    'default_attributes' : {
+\      'label': [{'htmlFor': ' '}],
+\      'class': { 'className': ' '},
+\    },
+\  },
+\}
+
 " Statusline settings
 set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
@@ -315,4 +326,7 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+<<<<<<< HEAD
 
+=======
+>>>>>>> c3469085bfe11e2f9beaa9d287b0db73c4084045
