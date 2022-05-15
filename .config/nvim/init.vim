@@ -326,7 +326,3 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-<<<<<<< HEAD
-
-=======
->>>>>>> c3469085bfe11e2f9beaa9d287b0db73c4084045
