@@ -11,7 +11,8 @@
     "typescript.tsx",
     "graphql",
     "c",
-    "cpp"
+    "cpp",
+    "html"
   ],
   "languageserver": {
     "ccls": {

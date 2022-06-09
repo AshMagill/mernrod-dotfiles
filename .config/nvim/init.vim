@@ -78,7 +78,7 @@ let g:vrc_curl_opts = {
 \} 
 
  "Set path to save dbui queries
-let g:db_ui_tmp_query_location = '~/Documents/Utils/dbui-buffers'
+let g:db_ui_tmp_query_location = '~/Development/dbui-buffers'
 
 " Call Httpie clients in vim to the right
 command Httpie set splitbelow | new | set filetype=sh | read !sh #
