@@ -5,6 +5,8 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	autocmd VimEnter * PlugInstall
 endif
 
+"Plugins
+
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
@@ -14,7 +16,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -36,18 +37,11 @@ Plug 'puremourning/vimspector'
 Plug 'kevinhui/vim-docker-tools'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 
-" Emmet working with JSX (without need for jsx extension)
-let g:user_emmet_settings={
-\ 'javascript' : {
-\   'extends' : 'jsx',
-\    'default_attributes' : {
-\      'label': [{'htmlFor': ' '}],
-\      'class': { 'className': ' '},
-\    },
-\  },
-\}
+" GENERAL 
 
 " Statusline settings
 set statusline +=%1*%=%5l%*             "current line
@@ -67,21 +61,6 @@ nmap <Leader>dj <Plug>VimspectorStepOver
 
 " PlantUML Shortcuts
 nmap <Leader>po :PlantumlOpen<CR>
-
-" Zoom in and out with dadbod-ui
-nmap <leader>z <Plug>Zoom
-
-" Format VRC output
-let g:vrc_curl_opts = {
-  \ '-i': '',
-  \ '-s': '',
-\} 
-
- "Set path to save dbui queries
-let g:db_ui_tmp_query_location = '~/Development/dbui-buffers'
-
-" Call Httpie clients in vim to the right
-command Httpie set splitbelow | new | set filetype=sh | read !sh #
 
 " show path of file and name of file
 set statusline+=%F
@@ -139,17 +118,20 @@ let g:user_emmet_leader_key=','
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-"nerd commenter alt keys for jsx
-let g:NERDCustomDelimiters={
-	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-\}
-
 "colorscheme
 colorscheme gruvbox
 
 " make background transparent
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
+
+"set new windows to open in the right (might mess with db etc)
+:set splitright
+
+" NERDTREE
+
+" change color of folder icon in nerdtree
+highlight! link NERDTreeFlags NERDTreeDir
 
 " make nerdtree borders transparent
 highlight VertSplit ctermbg=NONE
@@ -181,7 +163,9 @@ endfunction
 " close nerdtree when opening file
 let g:NERDTreeQuitOnOpen = 1
 
-" coc config
+" COC 
+
+" any coc extensions listed here will be automatically loaded
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -190,6 +174,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-tabnine',
+  \ 'coc-pyright'
   \ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -323,4 +308,43 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "remap ultisnips so that I can set coc to tab
 let g:UltiSnipsExpandTrigger = '<f5>'
 
+" WEB DEV 
 
+" Emmet working with JSX (without need for jsx extension)
+let g:user_emmet_settings={
+\ 'javascript' : {
+\   'extends' : 'jsx',
+\    'default_attributes' : {
+\      'label': [{'htmlFor': ' '}],
+\      'class': { 'className': ' '},
+\    },
+\  },
+\}
+
+"nerd commenter alt keys for jsx
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
+
+" Zoom in and out with dadbod-ui
+nmap <leader>z <Plug>Zoom
+
+" Format VRC output
+let g:vrc_curl_opts = {
+  \ '-i': '',
+  \ '-s': '',
+\} 
+
+ "Set path to save dbui queries
+let g:db_ui_tmp_query_location = '~/Development/dbui-buffers'
+
+" Call Httpie clients in vim to the right
+command Httpie set splitbelow | new | set filetype=sh | read !sh #
+
+" PYTHON
+
+" press f10 to run all code
+nmap <f10> <Plug>(quickrun)
+
+" press f9 to run paragraph of code
+nnoremap <f9> :<C-u>set opfunc=quickrun#operator<CR>g@ip
