@@ -1,0 +1,36 @@
+list of the russian alphabet:
+(cyrillic) 33 letters, 10 vowels, 21 consonants, 2 special signs 
+
+Аа => Pronounced 'ah' as in 'father'
+Бб => Pronounced 'b' as in 'bad'
+Вв => Pronounced 'v' as in 'vine'
+Гг => Pronounced 'g' as in 'go'
+Дд => Pronounced 'd' as in 'do'
+Ее => If not stressed, pronounced 'ee' as in 'meet', if stressed or at beginning, pronounced 'ye' as in 'yet' 
+Ёё => Pronounced 'yo' as in 'yolk'
+Жж => Pronounced 'zh' as in 'pleasure'
+Зз => Pronounced 'z' as in 'zoo'
+Ии => Pronounced 'ee' as in 'police'
+Йй => Pronounced 'y' as in 'toy'
+Кк => Pronounced 'k' as in 'kept'
+Лл => Pronounced 'l' as in 'lamp'
+Мм => Pronounced 'm' as in 'mother'
+Нн => Pronounced 'n' as in 'not'
+Оо => Pronounced 'o' as in 'more'
+Пп => Pronounced 'p' as in 'pet'
+Рр => Pronounced as rolled 'r'
+Сс => Pronounced 's' as in 'set'
+Тт => Pronounced 't' as in 'top'
+Уу => Pronounced 'oo' as in 'tool'
+фф => Pronounced 'f' as in 'face'
+Хх => Pronounced 'h' as in 'home'
+Цц => Pronounced 'ts' as in 'sits'
+Чч => Pronounced 'ch' as in 'chat'
+Шш => Pronounced 'sh' as in 'sharp'
+Щщ => Pronounced 'sh' as in 'sheer'
+Ъъ => Silent, prevents 'softening' of the preceeding consonant
+Ыы => No english equivilent, reposition jaw and make an 'eu' sound
+Ьь => Silent, softens of the preceeding consonant
+Зз => Pronounced 'e' as in 'met'
+Юю => Pronounced 'yoo' as in 'use'
+Яя => Pronounced 'yah' as in 'yard'
